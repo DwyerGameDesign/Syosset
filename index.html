@@ -48,7 +48,8 @@
   .sec-head .tag{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);font-weight:600;border:1px solid var(--brass);padding:5px 12px;border-radius:30px}
   .sec-intro{max-width:62ch;color:#4a4f44;margin:14px 0 36px;font-size:1.04rem}
   .sec-intro b{color:var(--green);font-weight:600}
-  .subhead{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--green);margin:44px 0 6px;font-weight:440}
+  .subhead{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--green);margin:44px 0 6px;font-weight:440;display:flex;align-items:center;gap:12px}
+  .subhead::before{content:"";width:26px;height:2px;background:var(--brass);border-radius:2px}
   .subhead-note{color:#6a6f60;font-size:.95rem;margin-bottom:24px;max-width:60ch}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
@@ -80,7 +81,6 @@
   .c-phone{font-size:.82rem;color:#6a6f60;font-variant-numeric:tabular-nums}
   .card.feat .c-phone{color:rgba(245,239,225,.7)}
 
-  /* summary */
   .home-band{background:linear-gradient(165deg,var(--green) 0%,var(--green-deep) 100%);color:var(--cream);border-radius:20px;padding:38px 40px;margin-bottom:40px;position:relative;overflow:hidden}
   .home-band::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(245,239,225,.05) 1px,transparent 1px);background-size:20px 20px;opacity:.5}
   .home-band h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.7rem;color:var(--brass-bright);margin-bottom:4px}
@@ -100,7 +100,7 @@
   footer{background:var(--green-deep);color:rgba(245,239,225,.7);padding:46px 0;margin-top:50px;font-size:.86rem}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:center}
   footer b{color:var(--brass-bright);font-family:'Fraunces',serif;font-weight:400;font-size:1.05rem}
-  .disclaimer{font-size:.76rem;color:rgba(245,239,225,.45);max-width:46ch;line-height:1.5}
+  .disclaimer{font-size:.76rem;color:rgba(245,239,225,.45);max-width:48ch;line-height:1.5}
   @media(max-width:560px){.wrap{padding:0 20px}.tabs-inner{padding:0 12px}header.hero{padding:46px 0 66px}.home-band{padding:30px 24px}}
 </style>
 </head>
@@ -110,7 +110,7 @@
   <div class="wrap">
     <div class="eyebrow">A Family Relocation Dossier</div>
     <h1>Life around <em>Berry Hill</em>, on Oyster Bay Cove</h1>
-    <p class="sub">Schools and preschools, youth and adult soccer, the markets and restaurants you'll actually use, and the North Shore's best family weekends — all within an easy drive of the house.</p>
+    <p class="sub">Schools and preschools, kids' enrichment, youth and adult soccer, the markets and restaurants you'll actually use, family doctors, and the North Shore's best weekends — all within an easy drive of the house.</p>
     <div class="addr-chip">📍 <span>301 Berry Hill Road</span> &nbsp;·&nbsp; Oyster Bay Cove, NY 11791</div>
   </div>
 </header>
@@ -122,7 +122,7 @@
   <div class="wrap">
     <div>
       <b>Compiled for the family considering 301 Berry Hill Rd</b>
-      <div class="disclaimer">Ratings and details reflect public listings at time of compilation. School zoning per the property's MLS listing — confirm enrollment directly with the district. Drive times are approximate from Oyster Bay Cove.</div>
+      <div class="disclaimer">Drive times are approximate, estimated from the property's location at the Syosset-adjacent edge of Oyster Bay Cove (always verify in your maps app). Ratings and details reflect public listings at time of compilation; school zoning per the MLS listing — confirm enrollment with the district.</div>
     </div>
     <div style="text-align:right">North Shore · Nassau County<br>Long Island, New York</div>
   </div>
@@ -137,31 +137,31 @@ const SECTIONS = [
   {
     id:"preschool", label:"Preschools",
     h2:"Preschool for a 4-Year-Old", tag:"Pre-K Ready",
-    intro:"The two best-loved options sit side by side on East Main Street in Oyster Bay village — closest to the house. A little further in Syosset are strong church-affiliated half-day programs plus a full-day center with extended hours. <b>All of the picks below carry near-perfect ratings.</b>",
+    intro:"Because the house sits at the Syosset-adjacent edge of Oyster Bay Cove, the <b>closest preschools are actually in Syosset (~5 min)</b>, including a full-day center with the widest hours. The two most-acclaimed village programs sit side by side in Oyster Bay — a touch farther (~9 min) but worth it for the charm. All carry near-perfect ratings.",
     cards:[
-      {name:"The Oyster Bay Preschool", rate:5.0, count:"16", drive:"~11 min · Oyster Bay", meta:"60 E Main St · Ages 2+", note:"Glowing reviews for warm, nurturing teachers and an easy transition for shy kids. Repeatedly called a wonderful first-school experience focused on social, emotional and academic growth.", phone:"516-507-9769", pills:["5.0 ★","Village favorite"], feat:true, badge:"Village favorite"},
-      {name:"Learning Tree Nursery School", rate:4.8, count:"20", drive:"~11 min · Oyster Bay", meta:"61 E Main St · 9:15a–2:30p", note:"Right across from Oyster Bay Preschool. Music, gym, hands-on learning and strong community ties — a clear pre-K stepping stone toward kindergarten.", phone:"516-922-5999", pills:["4.8 ★","Half day"]},
-      {name:"Community Church Nursery School", rate:5.0, count:"3", drive:"~3 min · Syosset", meta:"36 Church St · Half-day Pre-K", note:"Parents single out the pre-K program for getting 4-year-olds kindergarten-ready. More affordable, half-day, community-church model.", phone:"516-364-5090", pills:["5.0 ★","Pre-K prep"]},
-      {name:"Faith Nursery School", rate:5.0, count:"5", drive:"~7 min · Syosset", meta:"231 Jackson Ave · 9a–3p", note:"Highly communicative and flexible, with a summer camp option too. Families describe kids coming home 'beaming every single day.'", phone:"516-921-3330", pills:["5.0 ★","Summer camp"]},
-      {name:"Blooming Buds Learning Center", rate:5.0, count:"34", drive:"~5 min · Syosset", meta:"60 Ira Rd · 6:30a–7:00p", note:"Full-day child-care center with the widest hours — great for working-parent flexibility. Organic meals, UPK, and the most reviews of the bunch at a perfect score.", phone:"516-496-1050", pills:["5.0 ★","Extended hours","UPK"]},
+      {name:"Blooming Buds Learning Center", rate:5.0, count:"34", drive:"~5 min · Syosset", meta:"60 Ira Rd · 6:30a–7:00p", note:"Closest preschool and the most flexible — a full-day center with the widest hours (great for working parents), organic meals, UPK, and a perfect score across the most reviews of the bunch.", phone:"516-496-1050", pills:["5.0 ★","Extended hours","UPK"], feat:true, badge:"Closest"},
+      {name:"Faith Nursery School", rate:5.0, count:"5", drive:"~5 min · Syosset", meta:"231 Jackson Ave · 9a–3p", note:"Highly communicative and flexible, with a summer camp option too. Families describe kids coming home 'beaming every single day.'", phone:"516-921-3330", pills:["5.0 ★","Summer camp"]},
+      {name:"Community Church Nursery School", rate:5.0, count:"3", drive:"~5 min · Syosset", meta:"36 Church St · Half-day Pre-K", note:"Parents single out the pre-K program for getting 4-year-olds kindergarten-ready. More affordable, half-day, community-church model.", phone:"516-364-5090", pills:["5.0 ★","Pre-K prep"]},
+      {name:"The Oyster Bay Preschool", rate:5.0, count:"16", drive:"~9 min · Oyster Bay", meta:"60 E Main St · Ages 2+", note:"The acclaimed village option — glowing reviews for warm, nurturing teachers and an easy transition for shy kids. A wonderful first-school experience focused on social, emotional and academic growth.", phone:"516-507-9769", pills:["5.0 ★","Village favorite"]},
+      {name:"Learning Tree Nursery School", rate:4.8, count:"20", drive:"~9 min · Oyster Bay", meta:"61 E Main St · 9:15a–2:30p", note:"Right across from Oyster Bay Preschool in the village. Music, gym, hands-on learning and strong community ties — a clear pre-K stepping stone toward kindergarten.", phone:"516-922-5999", pills:["4.8 ★","Half day"]},
     ]
   },
   {
     id:"schools", label:"Schools",
     h2:"Schools", tag:"Public + Private",
-    intro:"This address is in the <b>Syosset Central School District</b> — consistently ranked among the strongest public districts on Long Island and in New York State. Per the property listing, the home is zoned for the three public schools below, which take a child from kindergarten through graduation. The North Shore is also rich with elite private schools, listed beneath.",
+    intro:"This address is in the <b>Syosset Central School District</b> — ranked the #2 public district in the U.S. in Niche's 2026 rankings. Per the property listing, the home is zoned for the three public schools below, all ~5–7 minutes away. The Gold Coast is also rich with elite private schools, listed beneath.",
     cards:[
-      {name:"Berry Hill Elementary School", rate:null, drive:"~3 min · Syosset", meta:"181 Cold Spring Rd · Grades K–5", note:"Your zoned elementary school and the home's namesake. Part of the highly regarded Syosset district; small neighborhood-school feel feeding into South Woods Middle.", phone:"516-364-5790", link:"https://berryhill.syossetschools.org/", pills:["Public","Zoned"], feat:true, badge:"Your zone"},
-      {name:"South Woods Middle School", rate:null, drive:"~5 min · Syosset", meta:"99 Pell Ln · Grades 6–8 · 8:03a–2:50p", note:"The zoned middle school for this address. One of Syosset's two middle schools, feeding directly into Syosset High.", phone:"516-364-5621", link:"https://www.syossetschools.org/schools", pills:["Public","Zoned"]},
-      {name:"Syosset High School", rate:null, drive:"~6 min · Syosset", meta:"70 S Woods Rd · Grades 9–12 · 7:39a–2:21p", note:"A perennially top-ranked Long Island high school known for strong academics, AP offerings, athletics and arts. The district's single comprehensive high school.", phone:"516-364-5675", link:"https://shs.syossetschools.org/", pills:["Public","Top-ranked"]},
+      {name:"Berry Hill Elementary School", rate:null, drive:"~6 min · Syosset", meta:"181 Cold Spring Rd · Grades K–5", note:"Your zoned elementary school and the home's namesake. Part of the top-ranked Syosset district; small neighborhood-school feel feeding into South Woods Middle.", phone:"516-364-5790", link:"https://berryhill.syossetschools.org/", pills:["Public","Zoned"], feat:true, badge:"Your zone"},
+      {name:"South Woods Middle School", rate:null, drive:"~6 min · Syosset", meta:"99 Pell Ln · Grades 6–8", note:"The zoned middle school for this address. One of Syosset's two middle schools, feeding directly into Syosset High.", phone:"516-364-5621", link:"https://www.syossetschools.org/schools", pills:["Public","Zoned"]},
+      {name:"Syosset High School", rate:null, drive:"~7 min · Syosset", meta:"70 S Woods Rd · Grades 9–12", note:"A perennially top-ranked Long Island high school known for strong academics, AP offerings, athletics and arts. The district's single comprehensive high school.", phone:"516-364-5675", link:"https://shs.syossetschools.org/", pills:["Public","Top-ranked"]},
     ],
     extras:[{
       subhead:"Private & independent schools",
-      note:"The Gold Coast's marquee independents, all an easy drive west through Locust Valley and Glen Head.",
+      note:"The Gold Coast's marquee independents, an easy drive west through Locust Valley and Glen Head.",
       cards:[
-        {name:"Portledge School", rate:null, drive:"~17 min · Locust Valley", meta:"355 Duck Pond Rd · Pre-N–Grade 12", note:"A well-regarded independent day school spanning preschool through 12th grade on a leafy campus — one option that could carry all your kids start to finish in one place.", phone:"516-750-3100", link:"https://www.portledge.org", pills:["Independent","PreK–12"]},
-        {name:"Friends Academy", rate:null, drive:"~18 min · Locust Valley", meta:"270 Duck Pond Rd · Age 3–Grade 12", note:"A prestigious Quaker college-prep school known for strong academics and values-based education, from early childhood through upper school.", phone:"516-676-0393", link:"https://www.fa.org", pills:["Quaker","College prep"]},
-        {name:"The Green Vale School", rate:null, drive:"~20 min · Glen Head", meta:"250 Valentines Ln · Age 3–Grade 8", note:"A top lower/middle independent school feeding into the area's elite high schools — a classic North Shore starting point before secondary boarding/day schools.", phone:"516-621-2420", link:"https://www.greenvale.org", pills:["Independent","Age 3–8"]},
+        {name:"Portledge School", rate:null, drive:"~13 min · Locust Valley", meta:"355 Duck Pond Rd · Pre-N–Grade 12", note:"A well-regarded independent day school spanning preschool through 12th grade on a leafy campus — one option that could carry all your kids start to finish in one place.", phone:"516-750-3100", link:"https://www.portledge.org", pills:["Independent","PreK–12"]},
+        {name:"Friends Academy", rate:null, drive:"~13 min · Locust Valley", meta:"270 Duck Pond Rd · Age 3–Grade 12", note:"A prestigious Quaker college-prep school known for strong academics and values-based education, from early childhood through upper school.", phone:"516-676-0393", link:"https://www.fa.org", pills:["Quaker","College prep"]},
+        {name:"The Green Vale School", rate:null, drive:"~16 min · Glen Head", meta:"250 Valentines Ln · Age 3–Grade 8", note:"A top lower/middle independent school feeding into the area's elite high schools — a classic North Shore starting point before secondary day/boarding schools.", phone:"516-621-2420", link:"https://www.greenvale.org", pills:["Independent","Age 3–8"]},
       ]
     }]
   },
@@ -170,17 +170,18 @@ const SECTIONS = [
     h2:"Soccer for a 12-Year-Old", tag:"Age U12 / U13",
     intro:"At 12, the fork is <b>recreational</b> (local, low-commitment) versus <b>competitive travel</b> (tryouts, weekend games against other towns). Below: the home town club, the bigger competitive clubs in the region, summer camps, and a speed-training program. Fall rosters fill around now.",
     cards:[
-      {name:"Syosset Soccer Club", rate:null, drive:"~5 min", meta:"Town club · Rec + Travel", note:"Your home club. Age-grouped, so a 12-year-old slots into U12/U13 for rec or travel. A few reviews flag spotty scheduling communication — confirm details at sign-up.", phone:"516-628-9200", link:"https://syossetsoccer.org", pills:["Rec & Travel","Local"], feat:true, badge:"Home club"},
-      {name:"Long Island Rough Riders", rate:null, drive:"~28 min · Garden City", meta:"Competitive · pro-club affiliated", note:"One of the region's best-known competitive programs, tied to the storied Rough Riders pro club — a step up for a serious 12-year-old. Reviews note uneven skill grouping, so ask how they place by age and ability.", phone:"516-622-8499", link:"https://liroughriders.com", pills:["Competitive","Travel/Academy"]},
-      {name:"Albertson Fury / SUSA", rate:null, drive:"~20–25 min", meta:"Competitive club soccer", note:"Among Long Island's top competitive clubs (Albertson SC, SUSA Academy and similar) fielding strong U12/U13 travel and academy teams. Worth a tryout if the goal is high-level play and college-track development.", phone:null, link:"https://www.susaacademy.com", pills:["Competitive","Academy"]},
-      {name:"Bethpage Soccer", rate:null, drive:"~23 min", meta:"Neighboring-town club · Rec + Travel", note:"A solid backup town-club option if Syosset's division or schedule doesn't fit. Worth a call about their U12 offerings.", phone:"516-942-4788", link:"https://bethpagesoccer.com", pills:["Rec & Travel"]},
-      {name:"Long Island Sports Hub", rate:null, drive:"~12 min · Syosset", meta:"Indoor/outdoor · Summer programs", note:"Closest summer-camp option, right near Syosset. Indoor + outdoor complex running soccer classes and clinics through the season.", phone:"516-364-4000", link:"https://lisportshub.com", pills:["Summer camp","Indoor"]},
-      {name:"Future Stars Camps", rate:4.9, drive:"~24 min · Farmingdale", meta:"Multi-sport day camp · soccer track", note:"Highly rated, well-run weekly day camp. Best if you want a full camp day with variety plus a real soccer track — more social than soccer-only.", phone:"631-769-2267", link:"https://fscamps.com", pills:["Multi-sport","Weekly"]},
-      {name:"Parisi Speed School — Wantagh", rate:5.0, count:"26", drive:"~32 min", meta:"Speed, agility & strength", note:"Not a club — a youth athletic-performance program ('Jump Start'). Many LI soccer families add this 1–2×/week for speed and explosiveness. Perfect 5.0; evening + weekend hours fit around practice.", phone:"516-826-5555", link:"https://www.lihrwantagh.com/parisi-speed-school", pills:["Conditioning","Year-round"]},
+      {name:"Syosset Soccer Club", rate:null, drive:"~7 min", meta:"Town club · Rec + Travel", note:"Your home club. Age-grouped, so a 12-year-old slots into U12/U13 for rec or travel. A few reviews flag spotty scheduling communication — confirm details at sign-up.", phone:"516-628-9200", link:"https://syossetsoccer.org", pills:["Rec & Travel","Local"], feat:true, badge:"Home club"},
+      {name:"Long Island Rough Riders", rate:null, drive:"~25 min · Garden City", meta:"Competitive · pro-club affiliated", note:"One of the region's best-known competitive programs, tied to the storied Rough Riders pro club — a step up for a serious 12-year-old. Reviews note uneven skill grouping, so ask how they place by age and ability.", phone:"516-622-8499", link:"https://liroughriders.com", pills:["Competitive","Travel/Academy"]},
+      {name:"SUSA / Albertson Academy", rate:null, drive:"~20 min", meta:"Competitive club soccer", note:"Among Long Island's top competitive clubs (SUSA Academy, Albertson SC and similar) fielding strong U12/U13 travel and academy teams. Worth a tryout if the goal is high-level, college-track development.", phone:null, link:"https://www.susaacademy.com", pills:["Competitive","Academy"]},
+      {name:"Bethpage Soccer", rate:null, drive:"~15 min", meta:"Neighboring-town club · Rec + Travel", note:"A solid backup town-club option if Syosset's division or schedule doesn't fit. Worth a call about their U12 offerings.", phone:"516-942-4788", link:"https://bethpagesoccer.com", pills:["Rec & Travel"]},
+      {name:"Long Island Sports Hub", rate:null, drive:"~8 min · Syosset", meta:"Indoor/outdoor · Summer programs", note:"Closest summer-camp option, right near Syosset. Indoor + outdoor complex running soccer classes and clinics through the season.", phone:"516-364-4000", link:"https://lisportshub.com", pills:["Summer camp","Indoor"]},
+      {name:"US Academy of Soccer", rate:null, drive:"~20 min · Farmingdale", meta:"Soccer-specific academy", note:"For serious, skills-focused training rather than a multi-sport camp. Some reviews note older turf — ask about field conditions.", phone:"631-393-2784", link:"https://usacademyofsoccer.com", pills:["Skills focus","Camp"]},
+      {name:"Future Stars Camps", rate:4.9, drive:"~22 min · Farmingdale", meta:"Multi-sport day camp · soccer track", note:"Highly rated, well-run weekly day camp. Best if you want a full camp day with variety plus a real soccer track — more social than soccer-only.", phone:"631-769-2267", link:"https://fscamps.com", pills:["Multi-sport","Weekly"]},
+      {name:"Parisi Speed School — Wantagh", rate:5.0, count:"26", drive:"~22 min", meta:"Speed, agility & strength", note:"Not a club — a youth athletic-performance program ('Jump Start'). Many LI soccer families add this 1–2×/week for speed and explosiveness. Perfect 5.0; evening + weekend hours fit around practice.", phone:"516-826-5555", link:"https://www.lihrwantagh.com/parisi-speed-school", pills:["Conditioning","Year-round"]},
     ],
     extras:[{
       subhead:"And for the grown-ups — soccer at 45+",
-      note:"Three local adult options, from friendly to competitive.",
+      note:"Since you asked earlier: three local adult options, from friendly to competitive.",
       cards:[
         {name:"Long Island Men's Soccer (LIMS)", rate:null, drive:"Syosset team", meta:"Over-30 · 11v11 · Sunday eves", note:"The most local & laid-back fit — a friendly, non-competitive over-30 league that already fields a Syosset team. Eight games each spring & fall, Sunday evenings 5:30–7:30pm with referees. No playoffs by design.", phone:null, link:"https://limsoccer.com", pills:["Over-30","Recreational"]},
         {name:"LI Soccer Football League (LISFL)", rate:null, drive:"Massapequa fields", meta:"Over-40 & Over-50 divisions", note:"The Island's oldest adult league and the one with a true over-40/50 division — more competitive. Sanctioned with licensed refs; outdoor in Massapequa plus indoor play.", phone:null, link:"https://www.enyssa.org/leagues/lisfl/", pills:["Over-40","Competitive"]},
@@ -191,77 +192,204 @@ const SECTIONS = [
   {
     id:"enrichment", label:"Kids' Enrichment",
     h2:"Kids' Enrichment & Activities", tag:"Ages 4 & 12",
-    intro:"Beyond soccer, the Syosset commercial strip (~10–13 min south) is packed with top-rated kids' programs — swim, martial arts, dance, music, gymnastics and tutoring — and two excellent public libraries anchor free family programming, including one right in Oyster Bay village. Plenty here for both a 4- and a 12-year-old.",
+    intro:"Beyond soccer, the Syosset commercial strip (~5–9 min south) is packed with top-rated kids' programs — swim, martial arts, dance, music, gymnastics and tutoring — and two excellent public libraries anchor free family programming. Plenty here for both a 4- and a 12-year-old.",
     cards:[
-      {name:"Oyster Bay–East Norwich Library", rate:4.8, count:"23", drive:"~11 min · Oyster Bay", meta:"89 E Main St · Free programs", note:"The closest library — small but beloved, with a warm children's area, a famous shark display, and a popular mommy-and-me program. Open evenings and weekends; a great free family hub right in the village.", phone:"516-922-1212", pills:["Library","Free programs"], feat:true, badge:"Village hub"},
-      {name:"Long Island Swim School", rate:4.1, count:"69", drive:"~11 min · Syosset", meta:"170 Michael Dr · Year-round lessons", note:"Clean, spacious indoor pool with small classes and a glass viewing wall for parents. Families stick around for years; good from nervous beginners up through stroke clinics.", phone:"516-378-8467", pills:["Swim","All ages"]},
-      {name:"Masters Martial Arts", rate:5.0, count:"65", drive:"~11 min · Syosset", meta:"140 Eileen Way · Karate / confidence", note:"A perfect-5.0 dojo where 'Master Mike' is repeatedly credited with building kids' confidence and discipline. Tiger Schulmann's (4.9, on Jericho Tpke) is a strong nearby alternative.", phone:"516-496-9600", pills:["Martial arts","5.0 ★"]},
-      {name:"North Shore Performing Arts", rate:5.0, count:"11", drive:"~9 min · Syosset", meta:"609 Jericho Tpke · Dance", note:"A family-run dance studio (NSPAC) with both recreational and competition tracks, praised for building ability and confidence. For classical ballet, Sunshine Dance Studio (4.9) is another excellent option.", phone:"516-364-1150", pills:["Dance","Rec + competition"]},
+      {name:"Oyster Bay–East Norwich Library", rate:4.8, count:"23", drive:"~9 min · Oyster Bay", meta:"89 E Main St · Free programs", note:"Your home library district — small but beloved, with a warm children's area, a famous shark display, and a popular mommy-and-me program. Open evenings and weekends; a great free family hub in the village.", phone:"516-922-1212", link:"https://www.oysterbaylibrary.org", pills:["Library","Your district"], feat:true, badge:"Your district"},
       {name:"Eskay's Music Lessons", rate:4.9, count:"137", drive:"~5 min · Syosset", meta:"Piano, strings & more · in-home option", note:"Highly reviewed lessons matched to your child by instrument and goals, including NYSSMA prep and at-home options. Musart Music (5.0) and iSchool of Music & Art are nearby alternatives.", phone:"516-415-1825", pills:["Music","Lessons"]},
-      {name:"Infiniti Elite Gymnastics", rate:4.6, count:"30", drive:"~12 min · Syosset", meta:"10 Aerial Way · Rec + USAG team", note:"Modern gym with caring coaches, from recreational classes through a competitive USAG team. Sagamore Academy of Gymnastics is another local option (also does birthday parties).", phone:"516-827-0500", pills:["Gymnastics","Rec + team"]},
-      {name:"Mathnasium of Syosset", rate:4.8, count:"49", drive:"~5 min · Syosset", meta:"11 Ira Rd · Math tutoring + SAT prep", note:"Personalized math help that families credit with real grade jumps and SAT prep — useful as your 12-year-old hits middle-school math. Kumon (Jackson Ave) covers both math and reading.", phone:"516-944-6284", pills:["Tutoring","Math + SAT"]},
-      {name:"Syosset Public Library", rate:4.4, count:"138", drive:"~12 min · Syosset", meta:"225 S Oyster Bay Rd · 3 floors", note:"A large, newly renovated three-floor library with deep selection, kids' programming, a toddler play area and quiet tutoring spots — worth a card even though you're in the Oyster Bay library district.", phone:"516-921-7161", link:"https://www.syossetlibrary.org", pills:["Library","Renovated"]},
+      {name:"Mathnasium of Syosset", rate:4.8, count:"49", drive:"~5 min · Syosset", meta:"11 Ira Rd · Math tutoring + SAT prep", note:"Personalized math help that families credit with real grade jumps and SAT prep — useful as your 12-year-old hits middle-school math. Kumon (Jackson Ave) covers both math and reading.", phone:"516-944-6284", link:"https://www.mathnasium.com", pills:["Tutoring","Math + SAT"]},
+      {name:"North Shore Performing Arts", rate:5.0, count:"11", drive:"~6 min · Syosset", meta:"609 Jericho Tpke · Dance", note:"A family-run dance studio (NSPAC) with both recreational and competition tracks, praised for building ability and confidence. For classical ballet, Sunshine Dance Studio (4.9) is another excellent option.", phone:"516-364-1150", pills:["Dance","Rec + competition"]},
+      {name:"Masters Martial Arts", rate:5.0, count:"65", drive:"~8 min · Syosset", meta:"140 Eileen Way · Karate / confidence", note:"A perfect-5.0 dojo where 'Master Mike' is repeatedly credited with building kids' confidence and discipline. Tiger Schulmann's (4.9, on Jericho Tpke) is a strong nearby alternative.", phone:"516-496-9600", pills:["Martial arts","5.0 ★"]},
+      {name:"Long Island Swim School", rate:4.1, count:"69", drive:"~8 min · Syosset", meta:"170 Michael Dr · Year-round lessons", note:"Clean, spacious indoor pool with small classes and a glass viewing wall for parents. Families stick around for years; good from nervous beginners up through stroke clinics.", phone:"516-378-8467", pills:["Swim","All ages"]},
+      {name:"Infiniti Elite Gymnastics", rate:4.6, count:"30", drive:"~9 min · Syosset", meta:"10 Aerial Way · Rec + USAG team", note:"Modern gym with caring coaches, from recreational classes through a competitive USAG team. Sagamore Academy of Gymnastics is another local option (also does birthday parties).", phone:"516-827-0500", pills:["Gymnastics","Rec + team"]},
+      {name:"Syosset Public Library", rate:4.4, count:"138", drive:"~8 min · Syosset", meta:"225 S Oyster Bay Rd · 3 floors", note:"A large, newly renovated three-floor library with deep selection, kids' programming, a toddler play area and quiet tutoring spots — worth a card even though you're in the Oyster Bay library district.", phone:"516-921-7161", link:"https://www.syossetlibrary.org", pills:["Library","Renovated"]},
+    ]
+  },
+  {
+    id:"camps", label:"Summer Camps",
+    h2:"Summer Camps", tag:"Ages 4 & 12",
+    intro:"Camps for both kids, sorted by category. The general day camps below take both ages (toddler through teen); below them are picks tuned to the <b>4-year-old</b> and the <b>12-year-old</b>, plus soccer and theater specialty camps. Distances are approximate driving miles from the house. Age ranges, dates and tuition shift year to year — confirm directly before enrolling.",
+    cards:[
+      {name:"East Woods Discovery Camp", rate:5.0, count:"1", drive:"~1.7 mi · Oyster Bay", meta:"Ages ~3–14 · both kids", note:"The closest day camp — held on East Woods School's wooded 46-acre campus minutes away. A discovery/nature-themed program with two pools, slip-and-slides, sports and arts, spanning early childhood through middle school. Both kids fit.", phone:"516-922-4437", link:"https://www.campeastwoods.com", pills:["Day camp","Both ages"], feat:true, badge:"Closest"},
+      {name:"Portledge Summer Adventures", rate:5.0, count:"1", drive:"~3.5 mi · Locust Valley", meta:"Ages ~3–15 · both kids", note:"Held on the private Portledge School campus. Small group sizes and weekly-changing specialty camps; a polished, secluded setting close to home.", phone:"516-750-3104", link:"https://www.portledge.org", pills:["Day camp","Both ages"]},
+      {name:"Camps 'R' Us — Syosset", rate:4.5, count:"10", drive:"~3.0 mi · Syosset", meta:"Ages ~3–15 · both kids", note:"Affordable local chain with a convenient Syosset location, lots of daily activities (sports, swim, arts, bowling), and optional field trips grouped by age.", phone:"516-935-2267", link:"https://www.campsrus.com", pills:["Day camp","Value"]},
+      {name:"Camp Gan Israel (Central LI)", rate:5.0, count:"4", drive:"~6.5 mi · Plainview", meta:"Ages ~3–13 · both kids", note:"Warm, structured day camp with swimming, horseback riding and twice-weekly off-site trips, plus Jewish cultural programming.", phone:"917-613-6553", pills:["Day camp","Both ages"]},
+      {name:"North Shore Day Camp", rate:4.6, count:"28", drive:"~6.5 mi · Glen Cove", meta:"Ages 2–15 · both kids", note:"Large, well-kept Gold Coast campus with a strong swim program and air-conditioned mini-bus transport. Takes kids from age 2 up through teens; flexible 4–8 week enrollment.", phone:"516-676-0904", link:"https://www.northshoredaycamp.com", pills:["Day camp","Bus + swim"]},
+      {name:"Old Westbury Summer Camp", rate:4.5, count:"11", drive:"~7.5 mi · Old Westbury", meta:"Toddler–teen · both kids", note:"Big campus with Red Cross swim lessons, theme days, and even an equestrian option. Programs run from the toddler range up through older campers.", phone:"516-626-9268", pills:["Day camp","Equestrian"]},
+      {name:"Driftwood Day Camp", rate:4.7, count:"169", drive:"~7.0 mi · Melville", meta:"Ages ~3–15 · both kids", note:"One of the most-reviewed camps on the Island and a repeat 'Best of LI' winner. Bus service, swim instruction and a huge activity range on a rebuilt 22-acre campus. Farther, but highly regarded.", phone:"631-692-6990", link:"https://www.driftwooddaycamp.com", pills:["Day camp","Top-reviewed"]},
+      {name:"Pierce Country Day Camp", rate:4.8, count:"107", drive:"~8.5 mi · Roslyn", meta:"Ages 2–14 · both kids", note:"America's first day camp (est. 1918) on 27 acres — seven age-specific pools including an indoor water park, top camper-to-counselor ratio, and its own bus company.", phone:"516-621-2211", link:"https://www.piercecamps.com", pills:["Day camp","7 pools"]},
+      {name:"Shibley Day Camp", rate:4.9, count:"181", drive:"~8.5 mi · Roslyn Heights", meta:"Ages 2.5–15 · both kids", note:"Top-rated, long-established camp on 20+ wooded acres — twice-daily swim with Red Cross instruction, theme days, bus service and strong parent communication. Both kids fit.", phone:"516-621-8777", link:"https://www.shibleydaycamp.com", pills:["Day camp","Top-rated"]},
+    ],
+    extras:[
+      {
+        subhead:"Best for the 4-year-old",
+        note:"Gentle early-childhood summer programs, two of them right in the village.",
+        cards:[
+          {name:"The Oyster Bay Preschool", rate:5.0, count:"16", drive:"~1.3 mi · Oyster Bay", meta:"Ages ~2–5 · best for 4", note:"Nurturing in-village preschool that runs summer programming for little ones. Walkably close — an ideal, low-key landing spot for the 4-year-old.", phone:"516-507-9769", pills:["Preschool camp","Closest"]},
+          {name:"Learning Tree Nursery School", rate:4.8, count:"20", drive:"~1.3 mi · Oyster Bay", meta:"Ages ~2–5 · best for 4", note:"Beloved community nursery school with music, gym and hands-on learning. Very close; a gentle early-childhood summer option for the 4-year-old.", phone:"516-922-5999", pills:["Preschool camp"]},
+          {name:"Heart and Mind STEM Center", rate:5.0, count:"5", drive:"~5.6 mi · Hicksville", meta:"Ages ~2–6 · best for 4", note:"STEM-focused early-childhood center with enrichment classes (cooking, gardening, music), two playgrounds and a gym. A great fit for the 4-year-old.", phone:"516-470-0046", pills:["STEM","Early childhood"]},
+        ]
+      },
+      {
+        subhead:"Best for the 12-year-old",
+        note:"Affordable, activity- and trip-focused programs for school-age kids.",
+        cards:[
+          {name:"Boys & Girls Club of OB–East Norwich", rate:4.8, count:"5", drive:"~1.0 mi · Oyster Bay", meta:"Ages ~6–15 · best for 12", note:"Very close and affordable, with long 7am–6:30pm hours that help working parents. Best suited to the 12-year-old; check the minimum age if you'd want it for the 4-year-old too.", phone:"516-922-9285", pills:["Day camp","Closest"]},
+          {name:"Young People's Day Camp of LI", rate:4.4, count:"27", drive:"~6.8 mi · Hicksville", meta:"Ages ~5–15 · best for 12", note:"Activity- and trip-focused with extended 7am–6pm hours — a good fit for the 12-year-old. Confirm whether they take age 4 if you need both.", phone:"516-650-1856", pills:["Day camp","Trips"]},
+        ]
+      },
+      {
+        subhead:"Soccer camps",
+        note:"From a club practically on your street to a Real Madrid-branded program.",
+        cards:[
+          {name:"OBEN Soccer Club", rate:5.0, count:"2", drive:"~0.5 mi · Oyster Bay", meta:"Youth · best for 12", note:"The Oyster Bay-East Norwich community soccer club — practically on your street. Local rec and travel programs; ask about summer clinics and skills sessions for a 12-year-old.", phone:"516-922-2788", pills:["Soccer","On your street"]},
+          {name:"Syosset Soccer Club", rate:4.1, count:"9", drive:"~3.0 mi · Syosset", meta:"Youth · best for 12", note:"Well-maintained fields and travel programs close to home. Reviews praise the coaching but flag spotty communication — confirm summer camp dates and pricing directly.", phone:"516-628-9200", link:"https://syossetsoccer.org", pills:["Soccer","Travel"]},
+          {name:"Long Island Sports Hub", rate:4.2, count:"237", drive:"~4.0 mi · Syosset", meta:"Ages ~5–16 · best for 12", note:"Big multi-sport complex with indoor and outdoor turf — soccer clinics and camps all summer, handy on hot or rainy days with the indoor fields.", phone:"516-364-4000", link:"https://lisportshub.com", pills:["Soccer","Indoor option"]},
+          {name:"Future Stars — Old Westbury", rate:4.6, count:"22", drive:"~5.5 mi · Old Westbury", meta:"Ages ~4–15 · best for 12", note:"Multi-sport camp with a strong soccer program plus the option to mix in other sports, STEAM, even dance/drama by the week. Flexible if the 12-year-old wants variety.", phone:"516-834-2267", link:"https://fscamps.com", pills:["Soccer","Multi-sport"]},
+          {name:"Real Madrid Foundation Camps USA", rate:5.0, count:"1", drive:"~6.0 mi · Greenvale", meta:"Ages ~6–16 · best for 12", note:"Branded soccer camp using Real Madrid's training methodology and licensed coaches — a step up for a 12-year-old serious about the sport. Week-long sessions.", phone:"646-389-0006", pills:["Soccer","Elite/branded"]},
+        ]
+      },
+      {
+        subhead:"Theater & performing arts",
+        note:"For a stage-loving kid — from a local playhouse to LI's premier arts camp.",
+        cards:[
+          {name:"Cultural Arts Playhouse", rate:4.5, count:"143", drive:"~4.0 mi · Syosset", meta:"Ages ~6–16 · best for 12", note:"Closest theater option — an established Syosset playhouse whose musical-theater summer sessions end in a real staged show. Air-conditioned and well-reviewed.", phone:"516-694-3330", link:"https://www.culturalartsplayhouse.com", pills:["Theater","Closest"]},
+          {name:"From Stage to Screen Academy", rate:4.8, count:"16", drive:"~5.5 mi · Huntington", meta:"Ages ~7–17 · best for 12", note:"Theater academy with leveled classes (beginner through intermediate) and an encouraging, skill-building style geared toward performance.", phone:"631-423-4440", pills:["Theater","Leveled"]},
+          {name:"Lawton Academy of Performing Arts", rate:5.0, count:"28", drive:"~6.0 mi · Glen Head", meta:"Ages ~5–17 · best for 12", note:"Highly praised children's theater company with a full production each session — structured, supportive and great for building stage confidence.", phone:"516-282-4852", pills:["Theater","Production"]},
+          {name:"Jazz Hands Children's Theatre", rate:null, drive:"~6.5 mi · Glen Cove", meta:"Youth · best for 12", note:"Glen Cove children's theatre focused on musical performance for kids and tweens. Call for the summer workshop/camp schedule and age groupings.", phone:"516-288-8943", pills:["Theater","Musical"]},
+          {name:"Usdan Summer Camp for the Arts", rate:4.7, count:"210", drive:"~9.5 mi · Wheatley Heights", meta:"Ages ~6–18 · best for 12", note:"The premier arts day camp on Long Island — nearly 60 years running, with standout musical-theater, music, dance and visual-arts tracks plus bus service. Farther, but a destination program.", phone:"631-643-7900", link:"https://www.usdan.org", pills:["Arts","Premier"]},
+        ]
+      }
     ]
   },
   {
     id:"shopping", label:"Shopping & Markets",
     h2:"Where You'll Actually Shop", tag:"Daily + Weekend",
-    intro:"Your everyday supermarket sits minutes south in Oyster Bay; a gourmet market handles special-occasion runs in the village; and bigger plazas in Plainview and Woodbury cover weekend errands — with a beloved Japanese mart in Syosset as a bonus.",
+    intro:"Your everyday supermarket and a specialty Japanese mart are minutes away; a gourmet market handles special-occasion runs in Oyster Bay village; and the big-box trio (Trader Joe's, Costco, Target) plus H Mart and ShopRite cover the bigger weekend hauls in Plainview, Jericho and beyond.",
     cards:[
-      {name:"Stop & Shop — Pine Hollow Rd", rate:3.9, count:"412", drive:"~8 min · Oyster Bay", meta:"295 Pine Hollow Rd · 7a–10p", note:"Your closest full supermarket and the main grocery for the immediate area. Large parking, online order pickup. The everyday workhorse.", phone:"516-922-0800", pills:["Everyday grocery","Closest"], feat:true, badge:"Closest"},
-      {name:"Provisions Market", rate:4.5, count:"26", drive:"~11 min · Oyster Bay", meta:"108 South St · 9a–7p daily", note:"Chic village gourmet market (same team as Two Spring) — superb produce, meats, fresh breads, prepared foods. Pricey, but reviewers rave about the baked goods.", phone:"516-922-3332", pills:["Gourmet","Prepared food"]},
-      {name:"ShopRite of Plainview", rate:4.2, count:"1,170", drive:"~15 min · Plainview", meta:"444 Woodbury Rd · 6a–11p", note:"Big-format supermarket with great selection and prices, late hours, bakery and prepared meals — the larger weekly stock-up run.", phone:"516-938-0240", pills:["Large format","Late hours"]},
-      {name:"Plainview Centre", rate:4.4, count:"1,545", drive:"~15 min · Plainview", meta:"S Oyster Bay Rd · Open-air mall", note:"Family-favorite open-air shopping center at Woodbury & S. Oyster Bay Rd — plenty of parking, dining and everyday retail in one stop.", phone:null, pills:["Open-air mall","Dining"]},
-      {name:"Woodbury Common Shopping Center", rate:4.4, count:"404", drive:"~11 min · Woodbury", meta:"8285 Jericho Tpke · 10a–7p", note:"Clean, friendly plaza with cafés, salads, bowls, a sneaker shop and easy parking — handy for quick errands and bites.", phone:null, pills:["Plaza","Cafés"]},
-      {name:"Hanamaru Japanese Mart", rate:4.8, count:"345", drive:"~9 min · Syosset", meta:"140 Jericho Tpke · Asian grocery + ramen", note:"A gem — fresh fish, Japanese groceries and snacks, plus a little ramen counter in back. Small lot, big charm. Across from Home Depot.", phone:"516-921-0600", pills:["Specialty","Eat-in ramen"]},
-      {name:"Trader Joe's — Plainview", rate:4.6, count:"2,043", drive:"~16 min · Plainview", meta:"425 S Oyster Bay Rd · 8a–9p", note:"The nearest Trader Joe's — cult-favorite snacks, frozen meals, flowers and wine at great prices. Aisles get tight and a few staples sell out, but worth the run.", phone:"516-933-6900", pills:["Specialty grocery","Value"]},
-      {name:"Costco Wholesale — Westbury", rate:4.4, count:"6,985", drive:"~26 min · Westbury", meta:"1250 Old Country Rd · 10a–8:30p", note:"Closest big Costco for bulk groceries, the famous rotisserie chicken, gas, tires and more. (Melville location is a similar drive east if you're over that way.)", phone:"516-683-8300", pills:["Warehouse","Bulk + gas"]},
-      {name:"Target — Hicksville", rate:4.1, count:"678", drive:"~18 min · Hicksville", meta:"Broadway Mall · 8a–11p", note:"The everyday everything-store — household goods, clothing, toys, groceries and pharmacy under one roof, with late hours and curbside pickup.", phone:"516-806-2096", pills:["Department","Late hours"]},
+      {name:"Stop & Shop — Pine Hollow Rd", rate:3.9, count:"412", drive:"~7 min · Oyster Bay", meta:"295 Pine Hollow Rd · 7a–10p", note:"Your closest full supermarket and the main everyday grocery for the area. Large parking, online order pickup. The everyday workhorse.", phone:"516-922-0800", link:"https://stopandshop.com", pills:["Everyday grocery","Closest"], feat:true, badge:"Closest"},
+      {name:"Hanamaru Japanese Mart", rate:4.8, count:"345", drive:"~7 min · Syosset", meta:"140 Jericho Tpke · Asian grocery + ramen", note:"A gem — fresh fish, Japanese groceries and snacks, plus a little ramen counter in back. Small lot, big charm. Across from Home Depot.", phone:"516-921-0600", pills:["Specialty","Eat-in ramen"]},
+      {name:"Trader Joe's — Plainview", rate:4.6, count:"2,043", drive:"~11 min · Plainview", meta:"425 S Oyster Bay Rd · 8a–9p", note:"The nearest Trader Joe's — cult-favorite snacks, frozen meals, flowers and wine at great prices. Aisles get tight and a few staples sell out, but worth the run.", phone:"516-933-6900", link:"https://www.traderjoes.com", pills:["Specialty grocery","Value"]},
+      {name:"H Mart — Jericho", rate:4.4, count:"4,474", drive:"~12 min · Jericho", meta:"336 N Broadway · 8a–10p daily", note:"The big Korean/Asian superstore — outstanding fresh fish and produce, huge prepared-food and snack selection, and a sushi counter (rolls 50% off after 7pm). Gets crowded; well worth it.", phone:"516-513-5050", link:"https://www.hmart.com", pills:["Asian grocery","Prepared food"]},
+      {name:"ShopRite of Plainview", rate:4.2, count:"1,170", drive:"~10 min · Plainview", meta:"444 Woodbury Rd · 6a–11p", note:"Big-format supermarket with great selection and prices, late hours, bakery and prepared meals — the larger weekly stock-up run.", phone:"516-938-0240", link:"https://www.shoprite.com", pills:["Large format","Late hours"]},
+      {name:"Target — Hicksville", rate:4.1, count:"678", drive:"~13 min · Hicksville", meta:"Broadway Mall · 8a–11p", note:"The everyday everything-store — household goods, clothing, toys, groceries and pharmacy under one roof, with late hours and curbside pickup.", phone:"516-806-2096", link:"https://www.target.com", pills:["Department","Late hours"]},
+      {name:"Costco Wholesale — Westbury", rate:4.4, count:"6,985", drive:"~18 min · Westbury", meta:"1250 Old Country Rd · 10a–8:30p", note:"Closest big Costco for bulk groceries, the famous rotisserie chicken, gas, tires and more. (The Melville warehouse is a similar drive if you're heading east.)", phone:"516-683-8300", link:"https://www.costco.com", pills:["Warehouse","Bulk + gas"]},
+      {name:"Provisions Market", rate:4.5, count:"26", drive:"~9 min · Oyster Bay", meta:"108 South St · 9a–7p daily", note:"Chic village gourmet market (same team as Two Spring) — superb produce, meats, fresh breads, prepared foods. Pricey, but reviewers rave about the baked goods.", phone:"516-922-3332", pills:["Gourmet","Prepared food"]},
+      {name:"Woodbury Common Shopping Center", rate:4.4, count:"404", drive:"~9 min · Woodbury", meta:"8285 Jericho Tpke · 10a–7p", note:"Clean, friendly plaza with cafés, salads, bowls, a sneaker shop and easy parking — handy for quick errands and bites.", phone:null, pills:["Plaza","Cafés"]},
+      {name:"Plainview Centre", rate:4.4, count:"1,545", drive:"~12 min · Plainview", meta:"S Oyster Bay Rd · Open-air mall", note:"Family-favorite open-air shopping center at Woodbury & S. Oyster Bay Rd — plenty of parking, dining and everyday retail in one stop.", phone:null, pills:["Open-air mall","Dining"]},
     ]
   },
   {
     id:"restaurants", label:"Restaurants",
-    h2:"Where to Eat", tag:"Date Night → Family",
-    intro:"Oyster Bay village punches well above its weight — a Parisian-level French room, top Italian, and casual spots the kids will love, all minutes away. Syosset and Woodbury add the family-style Italian institutions and farm-to-table favorites.",
+    h2:"Where to Eat", tag:"By Cuisine",
+    intro:"A genuinely deep bench within ~10 minutes, sorted by cuisine. The very closest sit-down spots — <b>George White</b> and <b>Owen's Tacos</b> — are right on Berry Hill Road, your own street. Oyster Bay village adds refined French and Italian; Syosset, Woodbury and Plainview fill in everything else.",
     cards:[
-      {name:"Fuji Sushi", rate:4.9, count:"54", drive:"~10 min · Oyster Bay", meta:"334 Lexington Ave · Sushi", note:"A quick, casual favorite — consistently fresh sushi, friendly, well-priced, with little touches for families. A reliable weeknight go-to.", phone:"516-226-1144", pills:["Sushi","Casual"], feat:true, badge:"Quick + casual"},
-      {name:"L'Etoile", rate:4.8, count:"182", drive:"~11 min · Oyster Bay", meta:"108 South St · French · Tue–Sun dinner", note:"A genuinely refined French bistro in the village — onion soup, duck, lobster thermidor. Diners say it feels like Paris for a night. The grown-up date-night pick.", phone:"516-730-8088", pills:["French","Date night"]},
-      {name:"Al Dente of Oyster Bay", rate:4.9, count:"24", drive:"~11 min · Oyster Bay", meta:"62 South St · Italian · 11:30a–late", note:"Warm, authentic Italian with an extensive menu — fresh pasta, steaks, house-made dressings and standout desserts. A new neighborhood favorite for relaxed dinners.", phone:"516-922-1130", pills:["Italian","Cozy"]},
-      {name:"Beach Bird", rate:4.7, count:"87", drive:"~11 min · Oyster Bay", meta:"19 E Main St · Fried chicken · $", note:"Beachy, fun, and great with kids — celebrated fried chicken tenders, mac & cheese, crispy fries, and tabletop games. The easy family-dinner answer.", phone:"516-240-2404", pills:["Family","Casual"]},
-      {name:"Wild Honey", rate:4.5, count:"429", drive:"~11 min · Oyster Bay", meta:"1 E Main St · American · Lunch & dinner", note:"Charming corner spot with great prix-fixe specials, mussels, ribs and burgers. Equally good for a walk-in lunch after Sagamore Hill or a group dinner.", phone:"516-922-4690", pills:["American","Popular"]},
-      {name:"Cafe Testarossa", rate:4.6, count:"365", drive:"~9 min · Syosset", meta:"499 Jericho Tpke · Italian-American", note:"A 35-year Long Island institution, voted Best Italian on LI in 2024. Elegant yet welcoming — works for both a special dinner and a family gathering.", phone:"516-364-8877", pills:["Italian","Special occasion"]},
-      {name:"Chris & Tony's", rate:4.6, count:"853", drive:"~9 min · Syosset", meta:"352 Jericho Tpke · Italian · Family-style", note:"Big, generous, family-style Italian where the staff treats you like a regular — like Sunday dinner at Nonna's. Make a reservation; it gets busy and loud in the best way.", phone:"516-496-1011", pills:["Family-style","Italian"]},
-      {name:"Rustic Root", rate:4.5, count:"853", drive:"~9 min · Woodbury", meta:"7927 Jericho Tpke · Farm-to-table", note:"Seasonal farm-to-table American — skillet cornbread, roasted chicken, great brunch. Spacious, cozy and notably kid-friendly.", phone:"516-364-5041", pills:["Farm-to-table","Brunch"]},
+      {name:"George White Restaurant", rate:4.4, count:"406", drive:"~4 min · Berry Hill Rd", meta:"33 Berry Hill Rd · American", note:"Your closest sit-down restaurant — on your own road. Warm, upscale-casual American with an Italian lean: short-rib crostini, pork loin calabrese, steaks, house bread. A go-to for date night or a family celebration.", phone:"516-364-2144", link:"https://thegeorgewhite.com", pills:["American","Closest"], feat:true, badge:"On your street"},
+      {name:"Hilltop Kitchen & Bar", rate:4.5, count:"603", drive:"~7 min · Syosset", meta:"150 Jericho Tpke · American · bar & grill", note:"Big portions, modern bar-and-grill vibe with an Italian flair — skirt steak, sea bass, short-rib rigatoni, strong cocktails and notably good gluten-free handling. Great for groups.", phone:"516-921-7748", link:"https://hilltopkitchenandbar.com", pills:["American","Family + groups"]},
+      {name:"Neptune Diner Syosset", rate:4.4, count:"266", drive:"~7 min · Syosset", meta:"312 Jericho Tpke · Diner · 7a–11p", note:"The freshly renovated all-day diner — huge menu, reasonable breakfasts, kids' menu and high chairs, spotless and family-friendly. The reliable any-time, any-craving answer.", phone:"516-364-1970", pills:["Diner","All-day"]},
+      {name:"Beach Bird", rate:4.7, count:"87", drive:"~10 min · Oyster Bay", meta:"19 E Main St · Fried chicken · $", note:"Beachy, fun, and great with kids — celebrated fried chicken tenders, mac & cheese, crispy fries, and tabletop games. The easy village family-dinner answer.", phone:"516-240-2404", pills:["American","Family"]},
+    ],
+    extras:[
+      {
+        subhead:"Italian",
+        note:"From a Best-of-LI institution to family-style Sunday-dinner energy.",
+        cards:[
+          {name:"Cafe Testarossa", rate:4.6, count:"365", drive:"~7 min · Syosset", meta:"499 Jericho Tpke · Italian-American", note:"A 35-year Long Island institution, voted Best Italian on LI in 2024. Elegant yet welcoming — works for both a special dinner and a family gathering.", phone:"516-364-8877", link:"https://www.cafetestarossa.com", pills:["Special occasion"]},
+          {name:"Chris & Tony's", rate:4.6, count:"853", drive:"~7 min · Syosset", meta:"352 Jericho Tpke · Family-style", note:"Big, generous, family-style Italian where the staff treats you like a regular — like Sunday dinner at Nonna's. Reserve ahead; it gets busy and loud in the best way.", phone:"516-496-1011", link:"https://chrisandtonys.com", pills:["Family-style"]},
+          {name:"Al Dente of Oyster Bay", rate:4.9, count:"24", drive:"~10 min · Oyster Bay", meta:"62 South St · Italian", note:"Warm, authentic village Italian — fresh pasta, steaks, house-made dressings and standout desserts. A relaxed neighborhood favorite.", phone:"516-922-1130", link:"https://aldenteob.com", pills:["Cozy"]},
+        ]
+      },
+      {
+        subhead:"Japanese & Sushi",
+        note:"Several strong sushi rooms, from an intimate omakase to a polished date-night spot.",
+        cards:[
+          {name:"Arata Sushi", rate:4.6, count:"375", drive:"~5 min · Syosset", meta:"18 Cold Spring Rd · Sushi / omakase", note:"Closest sushi — small, fresh and very good, with an Arata-style omakase worth booking ahead for. Reserve or arrive early; it fills up.", phone:"516-921-8154", link:"https://www.arata-sushi.com", pills:["Sushi","Omakase"]},
+          {name:"Kashi", rate:4.5, count:"773", drive:"~7 min · Syosset", meta:"343 Jericho Tpke · Japanese", note:"A polished, slightly upscale favorite — fresh sashimi, creative rolls (the sushi pizza is a hit), mocktails and attentive service. Good for a nicer night out.", phone:"516-864-0900", link:"https://www.kashisyosset.com", pills:["Sushi","Date night"]},
+          {name:"Sushi Vogue", rate:4.7, count:"300", drive:"~9 min · Woodbury", meta:"8063 Jericho Tpke · Japanese + Asian", note:"Stylish and fresh with a broad menu (sushi, bao, even pad thai) — reserve, as it fills quickly. Some seating at the bar and outdoors.", phone:"516-588-9900", link:"https://sushivogue.com", pills:["Sushi","Stylish"]},
+          {name:"Fuji Sushi", rate:4.9, count:"54", drive:"~9 min · Oyster Bay", meta:"334 Lexington Ave · Sushi", note:"A consistently fresh, friendly, well-priced village sushi spot with little touches for families — a reliable weeknight go-to.", phone:"516-226-1144", pills:["Sushi","Casual"]},
+        ]
+      },
+      {
+        subhead:"Chinese",
+        note:"Includes a rare Sichuan standout among the more familiar menus.",
+        cards:[
+          {name:"Nice Day Chinese", rate:4.8, count:"16", drive:"~7 min · Syosset", meta:"330 Jericho Tpke · Cantonese / dim sum", note:"A newer favorite in Syosset Center — authentic dishes, a good dim sum platter, fast service and a notably kind owner (try the chili-oil fries).", phone:"516-921-3038", pills:["Cantonese","Dim sum"]},
+          {name:"Beijing House", rate:3.8, count:"312", drive:"~7 min · Syosset", meta:"170 Jericho Tpke · Sichuan", note:"Plain decor, serious Sichuan — dan dan noodles, dry pots, mapo tofu, cumin lamb. A longtime favorite for fans of spicy, authentic Szechuan cooking.", phone:"516-864-0702", pills:["Sichuan","Authentic"]},
+          {name:"Golden Temple", rate:4.0, count:"283", drive:"~7 min · Syosset", meta:"417 Jericho Tpke · Chinese + sushi", note:"The all-rounder family go-to with a huge menu (and a Japanese side), gluten-free options, light flavorful soups and a full bar.", phone:"516-364-6476", pills:["Chinese","Full bar"]},
+        ]
+      },
+      {
+        subhead:"Thai",
+        note:"Two well-reviewed, prettily-decorated rooms a bit farther out.",
+        cards:[
+          {name:"UThai Bistro", rate:4.6, count:"182", drive:"~10 min · Woodbury", meta:"8285 Jericho Tpke · Thai", note:"Beautifully decorated and cozy with standout massaman curry and pad see ew. Small, so arrive early for lunch — it packs out.", phone:"516-304-5880", link:"https://www.uthaiwoodbury.com", pills:["Thai","Cozy"]},
+          {name:"Sawasdee Thai Elevated", rate:4.2, count:"469", drive:"~10 min · Plainview", meta:"395 S Oyster Bay Rd · Thai", note:"Bright, clean and attentive with a deep menu — crispy pork belly, roasted duck red curry, generous portions at a fair price. Good for groups and celebrations.", phone:"516-261-9346", link:"https://sawasdeeny.com", pills:["Thai","Group-friendly"]},
+        ]
+      },
+      {
+        subhead:"Indian",
+        note:"From a quick-and-flavorful Syosset spot to a swank date-night room.",
+        cards:[
+          {name:"Spice Hub", rate:4.7, count:"279", drive:"~5 min · Syosset", meta:"35 Jackson Ave · Indian fusion", note:"Closest Indian — outstanding chicken tikka masala and garlic naan, big portions, warm service, BYO-friendly. A hidden-gem weeknight favorite.", phone:"516-922-7777", pills:["Indian","Closest"]},
+          {name:"A Nest Indian Cuisine", rate:4.5, count:"73", drive:"~10 min · Plainview", meta:"430 Woodbury Rd · Indian", note:"A newer spot with a big, well-spiced menu and great service — stuffed naans, biryani, tender lamb chops, accommodating on heat level and large parties.", phone:"516-342-6006", pills:["Indian","Spacious"]},
+          {name:"Bhaijaan", rate:4.4, count:"267", drive:"~12 min · Hicksville", meta:"294 N Broadway · Modern Indian", note:"A swank, stylish room with creative Indian-flavored cocktails and elevated plates — cheese bombs, keema pao, butter chicken. Reserve for the date-night experience.", phone:"516-985-2759", pills:["Indian","Upscale"]},
+        ]
+      },
+      {
+        subhead:"Greek & Mediterranean",
+        note:"Two Berry Hill-area Greek spots plus a Turkish-leaning Med grill.",
+        cards:[
+          {name:"Platía Greek Kitchen", rate:4.4, count:"415", drive:"~5 min · Syosset", meta:"4 Berry Hill Rd · Greek", note:"Closest Greek — bright, clean and modern with grilled platters, fresh calamari and big portions. Easy parking and a friendly room.", phone:"516-921-3311", link:"https://www.platia-syosset.com", pills:["Greek","Closest"]},
+          {name:"It's Greek To Me", rate:4.4, count:"218", drive:"~5 min · Syosset", meta:"127 Jackson Ave · Greek · family-run", note:"A 30-year family-run favorite — juicy gyros and souvlaki, fresh tzatziki, homemade pita, and famously strong Greek coffee. Feels like family.", phone:"516-496-0771", pills:["Greek","Family-run"]},
+          {name:"Krinti Mediterranean Grill", rate:4.2, count:"125", drive:"~10 min · Woodbury", meta:"8285 Jericho Tpke · Turkish / Med", note:"Authentic Turkish-Mediterranean — mezes, kebabs, manti, seafood, halal options. Generous portions made for sharing with a group.", phone:"516-224-4661", link:"https://krinti.com", pills:["Mediterranean","Halal"]},
+        ]
+      },
+      {
+        subhead:"Mexican",
+        note:"Owen's is on your street; two more authentic spots round it out.",
+        cards:[
+          {name:"Owen's Tacos Syosset", rate:4.5, count:"121", drive:"~4 min · Berry Hill Rd", meta:"57 Berry Hill Rd · Mexican", note:"A hole-in-the-wall gem on your own road — everything made in house, mole and al pastor standouts, vegan-friendly, welcoming owner. Open late.", phone:"516-588-9500", pills:["Mexican","On your street"]},
+          {name:"Ruta Oaxaca", rate:4.6, count:"169", drive:"~9 min · Woodbury", meta:"8025 Jericho Tpke · Oaxacan", note:"Something special beyond the usual — creative Oaxacan cooking, the best quesadillas around, well-made margaritas, strong vegetarian options, and a mezcal focus.", phone:"516-515-9620", pills:["Mexican","Margaritas"]},
+          {name:"Tacos Los Cielitos", rate:4.8, count:"111", drive:"~10 min · Hicksville", meta:"390 Woodbury Rd · Tacos (tiny)", note:"A 12-seat, no-alcohol taqueria with some of the most authentic tacos around — birria, cemitas, free chips & salsa, and a famously kind owner. Takeout-friendly.", phone:"516-396-0837", pills:["Tacos","Authentic"]},
+        ]
+      },
+      {
+        subhead:"French & fine dining",
+        note:"The grown-up date-night pick, in Oyster Bay village.",
+        cards:[
+          {name:"L'Etoile", rate:4.8, count:"182", drive:"~9 min · Oyster Bay", meta:"108 South St · French · Tue–Sun dinner", note:"A genuinely refined French bistro — onion soup, duck, lobster thermidor. Diners say it feels like Paris for a night. The standout special-occasion room.", phone:"516-730-8088", link:"https://letoileny.com", pills:["French","Date night"]},
+          {name:"Wild Honey", rate:4.5, count:"429", drive:"~10 min · Oyster Bay", meta:"1 E Main St · American · lunch & dinner", note:"Charming village corner spot with great prix-fixe specials, mussels, ribs and burgers — equally good for a walk-in lunch or a group dinner.", phone:"516-922-4690", pills:["American","Popular"]},
+        ]
+      }
     ]
   },
   {
     id:"health", label:"Doctors & Dentists",
     h2:"Doctors & Dentists", tag:"Family Care",
-    intro:"A solid roster of family care close by — pediatricians (one right in Oyster Bay village), highly-rated dentists, and walk-in urgent care for the inevitable bumps and fevers. Always confirm they take your insurance before the first visit.",
+    intro:"A solid roster of family care close by — pediatricians (the closest in Syosset, plus a beloved village practice open 365 days), top-rated dentists, and walk-in urgent care for the inevitable bumps and fevers. Always confirm they take your insurance before the first visit.",
     cards:[
-      {name:"Oyster Bay Pediatric & Adolescent", rate:4.6, count:"36", drive:"~10 min · Oyster Bay", meta:"229 South St · Dr. Greg Gulbransen", note:"A beloved village-institution pediatrician — open 365 days a year, with parents praising Dr. Greg's diagnostic skill and round-the-clock availability. Weekend hours too.", phone:"516-922-3131", pills:["Pediatrics","Open daily"], feat:true, badge:"Village favorite"},
-      {name:"Allied Pediatrics of Jericho", rate:4.7, count:"197", drive:"~16 min · Jericho", meta:"380 N Broadway · Mon–Sat", note:"A large, well-reviewed group practice with longtime families and Saturday hours. Kind, thorough doctors across a deep bench.", phone:"516-931-1776", pills:["Pediatrics","Group practice"]},
-      {name:"Pediatric Health Associates", rate:4.6, count:"323", drive:"~17 min · Plainview", meta:"100 Manetto Hill Rd · 7 days", note:"Open seven days a week including Sunday mornings — great for sick visits and last-minute physicals. Long-established with a loyal following.", phone:"516-931-7337", pills:["Pediatrics","7 days/wk"]},
-      {name:"Optum Pediatrics — Syosset", rate:4.4, count:"57", drive:"~9 min · Syosset", meta:"575 Underhill Blvd · Sat AM", note:"The former 'KidFixers' — a 20-year fixture with themed exam rooms, late weekday hours and middle-of-the-night on-call for emergencies.", phone:"516-921-2122", pills:["Pediatrics","Late hours"]},
+      {name:"Oyster Bay Pediatric & Adolescent", rate:4.6, count:"36", drive:"~9 min · Oyster Bay", meta:"229 South St · Dr. Greg Gulbransen", note:"A true village institution — open 365 days a year, with parents praising Dr. Greg's diagnostic skill and round-the-clock availability. Weekend hours too.", phone:"516-922-3131", pills:["Pediatrics","Open 365 days"], feat:true, badge:"Open daily"},
+      {name:"Optum Pediatrics — Syosset", rate:4.4, count:"57", drive:"~6 min · Syosset", meta:"575 Underhill Blvd · Sat AM", note:"The closest pediatrician (formerly 'KidFixers') — a 20-year fixture with themed exam rooms, late weekday hours and middle-of-the-night on-call for emergencies.", phone:"516-921-2122", pills:["Pediatrics","Closest"]},
+      {name:"Allied Pediatrics of Jericho", rate:4.7, count:"197", drive:"~12 min · Jericho", meta:"380 N Broadway · Mon–Sat", note:"A large, well-reviewed group practice with longtime families and Saturday hours. Kind, thorough doctors across a deep bench.", phone:"516-931-1776", pills:["Pediatrics","Group practice"]},
+      {name:"Pediatric Health Associates", rate:4.6, count:"323", drive:"~13 min · Plainview", meta:"100 Manetto Hill Rd · 7 days", note:"Open seven days a week including Sunday mornings — great for sick visits and last-minute physicals. Long-established with a loyal following.", phone:"516-931-7337", pills:["Pediatrics","7 days/wk"]},
     ],
     extras:[
       {
         subhead:"Dentists",
-        note:"Two right in Oyster Bay village, plus the top-rated Syosset practices a bit further out — all 4.9★ or higher.",
+        note:"The two closest (and most-reviewed) are in Syosset; two more sit in Oyster Bay village — all 4.9★.",
         cards:[
-          {name:"Precision Family Dental — Oyster Bay", rate:4.9, count:"73", drive:"~11 min · Oyster Bay", meta:"73 South St · Family + specialty", note:"A lovely village family + specialty dentist. Reviewers highlight a patient, anxiety-friendly team that explains everything and handles insurance smoothly.", phone:"516-922-5730", pills:["Family dentist","Anxiety-friendly"]},
-          {name:"Corbin Dental at Oyster Bay", rate:4.9, count:"260", drive:"~11 min · Oyster Bay", meta:"216 South St · General + cosmetic", note:"A beautiful village office with a warm, detail-oriented team — great for nervous patients and routine family cleanings alike.", phone:"516-980-5695", pills:["General","Cosmetic"]},
-          {name:"Barkoff Dental", rate:4.9, count:"887", drive:"~4 min · Syosset", meta:"87 Cold Spring Rd · Full service", note:"The closest dentist — and one of the most-reviewed and most-praised on Long Island. Modern, spotless office with a calm, communicative team. Saturday hours.", phone:"516-921-1133", pills:["Full service","Closest"], feat:true, badge:"Closest"},
-          {name:"Shine Dental Associates", rate:4.9, count:"843", drive:"~9 min · Syosset", meta:"400 Jericho Tpke · Mon–Sat", note:"A large multi-specialty practice (general, oral surgery, implants) with evening and Saturday hours and consistently glowing reviews.", phone:"516-689-0553", pills:["Multi-specialty","Evenings"]},
+          {name:"Barkoff Dental", rate:4.9, count:"887", drive:"~5 min · Syosset", meta:"87 Cold Spring Rd · Full service", note:"Closest dentist and one of the most-praised on Long Island — modern, spotless office and a calm, communicative team. Saturday hours.", phone:"516-921-1133", pills:["Full service","Closest"], feat:true, badge:"Closest"},
+          {name:"Shine Dental Associates", rate:4.9, count:"843", drive:"~7 min · Syosset", meta:"400 Jericho Tpke · Mon–Sat", note:"A large multi-specialty practice (general, oral surgery, implants) with evening and Saturday hours and consistently glowing reviews.", phone:"516-689-0553", pills:["Multi-specialty","Evenings"]},
+          {name:"Precision Family Dental", rate:4.9, count:"73", drive:"~9 min · Oyster Bay", meta:"73 South St · Family + specialty", note:"A village family dentist with a patient, anxiety-friendly team that explains everything and handles insurance smoothly.", phone:"516-922-5730", pills:["Family dentist"]},
+          {name:"Corbin Dental at Oyster Bay", rate:4.9, count:"260", drive:"~9 min · Oyster Bay", meta:"216 South St · General + cosmetic", note:"A beautiful village office with a warm, detail-oriented team — great for nervous patients and routine family cleanings alike.", phone:"516-980-5695", pills:["General","Cosmetic"]},
         ]
       },
       {
         subhead:"Urgent care",
         note:"For after-hours fevers, sprains and stitches — no appointment needed.",
         cards:[
-          {name:"Northwell–GoHealth Urgent Care", rate:4.5, count:"362", drive:"~5 min · Syosset", meta:"103 Jackson Ave · 8a–8p (wkdys)", note:"Closest urgent care, tied into the Northwell hospital network — handy if a visit needs to escalate to a specialist or ER. Open weekends.", phone:"516-537-9062", pills:["Urgent care","Northwell"], feat:true, badge:"Closest"},
-          {name:"CityMD Syosset Urgent Care", rate:4.2, count:"268", drive:"~9 min · Syosset", meta:"358 Jericho Tpke · 8a–8p", note:"A reliable walk-in option for minor injuries and illness, with on-site X-ray and weekend hours.", phone:"516-677-9200", pills:["Walk-in","X-ray"]},
-          {name:"Northwell–GoHealth — Plainview", rate:4.6, count:"503", drive:"~15 min · Plainview", meta:"377 S Oyster Bay Rd · 8a–8p", note:"A second, slightly higher-rated Northwell location — notably kid-friendly per reviews, with short waits and thorough providers.", phone:"516-537-9061", pills:["Urgent care","Kid-friendly"]},
+          {name:"Northwell–GoHealth Urgent Care", rate:4.5, count:"362", drive:"~5 min · Syosset", meta:"103 Jackson Ave · 8a–8p (wkdys)", note:"Closest urgent care, tied into the Northwell hospital network — handy if a visit needs to escalate to a specialist or ER. Open weekends.", phone:"516-537-9062", link:"https://www.gohealthuc.com/northwell", pills:["Urgent care","Closest"], feat:true, badge:"Closest"},
+          {name:"CityMD Syosset Urgent Care", rate:4.2, count:"268", drive:"~7 min · Syosset", meta:"358 Jericho Tpke · 8a–8p", note:"A reliable walk-in option for minor injuries and illness, with on-site X-ray and weekend hours.", phone:"516-677-9200", link:"https://www.citymd.com", pills:["Walk-in","X-ray"]},
+          {name:"Northwell–GoHealth — Plainview", rate:4.6, count:"503", drive:"~10 min · Plainview", meta:"377 S Oyster Bay Rd · 8a–8p", note:"A second, slightly higher-rated Northwell location — notably kid-friendly per reviews, with short waits and thorough providers.", phone:"516-537-9061", link:"https://www.gohealthuc.com/northwell", pills:["Urgent care","Kid-friendly"]},
         ]
       }
     ]
@@ -269,13 +397,13 @@ const SECTIONS = [
   {
     id:"family", label:"Family Outings",
     h2:"Sites of Interest for the Family", tag:"Weekends & Visitors",
-    intro:"Oyster Bay Cove sits in the heart of the Gold Coast's history and shoreline. A short drive north brings a world-class arboretum, Theodore Roosevelt's home, and a waterfront park with beach and playgrounds — plus an amusement park and a south-shore beach for summer.",
+    intro:"Oyster Bay Cove sits in the heart of the Gold Coast's history and shoreline. A world-class arboretum and Theodore Roosevelt's home are <b>both about 10 minutes away</b>, along with a waterfront park and beach, an amusement park, and a south-shore ocean beach for summer.",
     cards:[
-      {name:"Planting Fields Arboretum", rate:4.8, count:"2,812", drive:"~13 min", meta:"State Historic Park · 9a–5p daily", note:"About 13 minutes north — 400+ acres of trees, gardens, greenhouses and a grand main house. Camellia festival, orchid displays, rose arbor, picnic lawns. A year-round family staple and a true LI gem.", phone:"516-922-9210", pills:["Gardens","Picnics","Day trip"], feat:true, badge:"Local gem"},
-      {name:"Sagamore Hill National Historic Site", rate:4.7, count:"1,722", drive:"~13 min", meta:"Theodore Roosevelt's home", note:"Teddy Roosevelt's 'Summer White House,' with the preserved estate, a museum, and a lovely nature trail down to a dock on the harbor. History plus an easy waterfront walk.", phone:"516-922-4788", pills:["History","Nature trail"]},
-      {name:"Theodore Roosevelt Memorial Park", rate:4.6, count:"1,869", drive:"~13 min", meta:"Waterfront park & beach", note:"The all-rounder: beach, two playgrounds, ball fields, tennis, BBQ areas, boat launch, fishing piers and a waterside path toward Bayville. Free parking; hosts the annual Oyster Festival.", phone:"516-624-6202", pills:["Beach","Playgrounds","Sports"]},
-      {name:"Bayville Adventure Park", rate:3.7, count:"1,548", drive:"~21 min · Bayville", meta:"Amusement · mini-golf · arcade", note:"Family amusement spot with mini-golf, rides and a popular Halloween haunted-house season. Reviews mixed on value — fun for younger kids; check seasonal hours.", phone:"516-624-7433", pills:["Amusement","Seasonal"]},
-      {name:"TOBAY Beach", rate:4.5, count:"292", drive:"~40 min · South Shore", meta:"Ocean & bayside beach", note:"The town's south-shore beach next to Jones Beach — big parking, calm warm bayside water with a kids' splash playground, restaurant, and Saturday live music. A summer-weekend favorite.", phone:null, pills:["Summer","Family beach"]},
+      {name:"Planting Fields Arboretum", rate:4.8, count:"2,812", drive:"~9 min", meta:"State Historic Park · 9a–5p daily", note:"A short drive away — 400+ acres of trees, gardens, greenhouses and a grand main house. Camellia festival, orchid displays, rose arbor, picnic lawns. A year-round family staple and a true LI gem.", phone:"516-922-9210", pills:["Gardens","Picnics"], feat:true, badge:"Nearby gem"},
+      {name:"Sagamore Hill National Historic Site", rate:4.7, count:"1,722", drive:"~10 min", meta:"Theodore Roosevelt's home", note:"Teddy Roosevelt's 'Summer White House,' with the preserved estate, a museum, and a lovely nature trail down to a dock on the harbor. History plus an easy waterfront walk.", phone:"516-922-4788", pills:["History","Nature trail"]},
+      {name:"Theodore Roosevelt Memorial Park", rate:4.6, count:"1,869", drive:"~9 min", meta:"Waterfront park & beach", note:"The all-rounder: beach, two playgrounds, ball fields, tennis, BBQ areas, boat launch, fishing piers and a waterside path toward Bayville. Free parking; hosts the annual Oyster Festival.", phone:"516-624-6202", pills:["Beach","Playgrounds","Sports"]},
+      {name:"Bayville Adventure Park", rate:3.7, count:"1,548", drive:"~15 min · Bayville", meta:"Amusement · mini-golf · arcade", note:"Family amusement spot with mini-golf, rides and a popular Halloween haunted-house season. Reviews mixed on value — fun for younger kids; check seasonal hours.", phone:"516-624-7433", pills:["Amusement","Seasonal"]},
+      {name:"TOBAY Beach", rate:4.5, count:"292", drive:"~28 min · South Shore", meta:"Ocean & bayside beach", note:"The town's south-shore beach next to Jones Beach — big parking, calm warm bayside water with a kids' splash playground, restaurant, and Saturday live music. A summer-weekend favorite.", phone:null, pills:["Summer","Family beach"]},
     ]
   },
 ];
@@ -297,6 +425,18 @@ function cardHTML(c){
   </article>`;
 }
 
+const SUMMARY_BLURB={
+  preschool:"Closest options are in Syosset (~5 min); the two acclaimed village schools are ~9 min. All near-perfect rated.",
+  schools:"Zoned for Syosset CSD — #2 district in the U.S. (Niche 2026) — plus elite North Shore private schools.",
+  soccer:"Town rec/travel club ~7 min, the region's competitive clubs (incl. LI Rough Riders), camps & speed training — and adult 40+ leagues.",
+  enrichment:"Swim, martial arts, dance, music, gymnastics & tutoring ~5–9 min — plus two libraries for free family programming.",
+  camps:"Day camps for both kids (the closest ~1.7 mi), plus soccer and theater specialty camps — with website links.",
+  shopping:"Everyday Stop & Shop ~7 min, Japanese mart ~7 min, and the big-box trio + H Mart a short drive in Plainview & Jericho.",
+  restaurants:"A deep bench by cuisine within ~10 min — two of the closest are right on Berry Hill Rd.",
+  health:"Pediatrician ~6 min, beloved village practice open 365 days, top dentists ~5 min, and walk-in urgent care.",
+  family:"Planting Fields, Sagamore Hill, a waterfront park & beach — the North Shore's best, about 10 min away.",
+};
+
 function summaryHTML(){
   const tiles = SECTIONS.filter(s=>s.kind!=="summary").map((s,i)=>`
     <button class="tile" data-jump="${s.id}">
@@ -310,25 +450,15 @@ function summaryHTML(){
       <h3>301 Berry Hill Road</h3>
       <div class="addr">Oyster Bay Cove, NY 11791 · Town of Oyster Bay, Nassau County</div>
       <div class="facts">
-        <div class="fact"><div class="k">The Home</div><div class="v">Center Hall Colonial<small>6 bed / 6 bath · 5,642 sqft · 2.42 acres</small></div></div>
+        <div class="fact"><div class="k">The Home</div><div class="v">Center Hall Colonial<small>6 bed / 6 bath · ~5,600 sqft · 2.42 acres</small></div></div>
         <div class="fact"><div class="k">School District</div><div class="v">Syosset CSD<small>Berry Hill → South Woods → Syosset HS</small></div></div>
         <div class="fact"><div class="k">Setting</div><div class="v">Cul-de-sac, Gold Coast<small>Saltwater pool · private &amp; quiet</small></div></div>
-        <div class="fact"><div class="k">Nearest Hub</div><div class="v">Syosset · ~5 min<small>schools, dining, shops &amp; tutoring</small></div></div>
+        <div class="fact"><div class="k">Nearest Hubs</div><div class="v">Syosset ~5 min<small>Oyster Bay village ~9 min</small></div></div>
       </div>
     </div>
-    <div class="sec-intro" style="margin-top:-10px">Here's the lay of the land for a family at this address — tap any card to jump straight to that section. The standout: you're <b>3–6 minutes</b> from the Syosset hub — schools, dining, shopping and tutoring — with historic Oyster Bay village and the waterfront about <b>10–13 minutes</b> north, all inside the <b>#2-ranked U.S. school district</b> (Niche, 2026).</div>
+    <div class="sec-intro" style="margin-top:-10px">Here's the lay of the land for a family at this address — tap any card to jump to that section. The address sits at the <b>Syosset-adjacent edge of Oyster Bay Cove</b>, so daily errands, schools and kids' activities are ~5 minutes away, while the village and the North Shore's marquee outings (Planting Fields, Sagamore Hill) are about 10 — all inside one of the country's <b>top-ranked school districts</b>.</div>
     <div class="tiles">${tiles}</div>`;
 }
-const SUMMARY_BLURB={
-  preschool:"Five near-perfect-rated options — the two best sit side-by-side in Oyster Bay village, ~8 min away.",
-  schools:"Zoned for the highly ranked Syosset district (Berry Hill → South Woods → Syosset HS), plus elite North Shore private schools.",
-  soccer:"Town rec/travel club plus the region's competitive clubs (incl. LI Rough Riders), camps & speed training — and adult 40+ leagues.",
-  enrichment:"Swim, martial arts, dance, music, gymnastics & tutoring minutes south — plus two libraries for free family programming.",
-  shopping:"Everyday Stop & Shop ~6 min, gourmet Provisions in the village, big plazas in Plainview & Woodbury.",
-  restaurants:"A surprising range minutes away — refined French & Italian, plus family-friendly casual spots.",
-  health:"Pediatrician right in the village, top-rated dentists nearby, and walk-in urgent care for the inevitable bumps.",
-  family:"Planting Fields, Sagamore Hill, a waterfront park & beach — all a short drive north, plus an amusement park.",
-};
 
 function panelHTML(s){
   if(s.kind==="summary"){
